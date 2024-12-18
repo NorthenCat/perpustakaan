@@ -22,7 +22,8 @@ class KoleksiBuku extends Model
 
     //casts (gunanya buat bisa menggunakan helper function seperti format tanggal dari laravel)
     protected $casts = [
-        'tahun_terbit' => 'date'
+        'tahun_terbit' => 'date',
+
     ];
 
     public function kategori()

@@ -15,8 +15,8 @@ return new class extends Migration {
             //foreign key
             $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->foreignId('buku_id')->constrained('koleksi_buku')->onDelete('cascade');
-            $table->date('tanggal_pinjam');
-            $table->date('tanggal_kembali');
+            $table->date('tanggal_pinjam')->nullable();
+            $table->date('tanggal_kembali')->nullable();
             $table->boolean('returned')->default(0);
             $table->timestamps();
         });

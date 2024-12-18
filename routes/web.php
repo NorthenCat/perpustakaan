@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\KoleksiBukuController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\User\UserDashboardController;
 use App\Models\CategoryBook;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,10 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/home', function () {
-        return view('home');
-    })->name('home');
-
+    Route::get('/home', [UserDashboardController::class, 'home'])->name('home');
+    Route::get('/detail/{id}', [UserDashboardController::class, 'detail'])->name('detail');
+    Route::post('/pinjam/{id}', [UserDashboardController::class, 'pinjam'])->name('pinjam-buku');
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 

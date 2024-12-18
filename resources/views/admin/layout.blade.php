@@ -40,7 +40,7 @@
                     </li>
                     <li class="me-2">
                         <a href="{{route('admin.koleksi-buku.index')}}"
-                            class="inline-block p-4 hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 {{ request()->routeIs('admin.koleksi-buku.index') ? 'text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500' : '' }}">Koleksi
+                            class="inline-block p-4 hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 {{ request()->routeIs('admin.koleksi-buku.*') ? 'text-blue-600 bg-gray-100 active dark:bg-gray-800 dark:text-blue-500' : '' }}">Koleksi
                             Buku</a>
                     </li>
                     <li class="me-2">
