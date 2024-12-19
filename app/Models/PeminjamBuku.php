@@ -10,15 +10,15 @@ class PeminjamBuku extends Model
     protected $fillable = [
         'user_id',
         'buku_id',
-        'tgl_pinjam',
-        'tgl_kembali',
+        'tanggal_pinjam',
+        'tanggal_kembali',
         'returned'
     ];
 
     //casts (gunanya buat bisa menggunakan helper function seperti format tanggal dari laravel)
     protected $casts = [
-        'tgl_pinjam' => 'date',
-        'tgl_kembali' => 'date'
+        'tanggal_pinjam' => 'datetime',
+        'tanggal_kembali' => 'datetime'
     ];
 
     public function user()

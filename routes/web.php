@@ -19,6 +19,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/home', [UserDashboardController::class, 'home'])->name('home');
     Route::get('/detail/{id}', [UserDashboardController::class, 'detail'])->name('detail');
     Route::post('/pinjam/{id}', [UserDashboardController::class, 'pinjam'])->name('pinjam-buku');
+    Route::get('/history', [UserDashboardController::class, 'history'])->name('history');
+    Route::post('/kembalikan/{id}', [UserDashboardController::class, 'return'])->name('kembalikan-buku');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
