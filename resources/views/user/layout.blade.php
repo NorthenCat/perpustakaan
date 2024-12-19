@@ -45,7 +45,7 @@
         </nav>
         <!-- Dropdown menu -->
         <div id="dropdownDivider"
-            class="absolute right-1 top-20 z-10 md:right-1 md:w-56 md:top-16 md:z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+            class="fixed right-1 top-20 z-10 md:right-1 md:w-56 md:top-16 md:z-20 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
             <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDividerButton">
                 <li>
                     <a href="{{ route('home') }}"
@@ -56,7 +56,7 @@
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">History</a>
                 </li>
                 <li>
-                    <a href="#"
+                    <a href="{{ route('profile') }}"
                         class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
                 </li>
             </ul>

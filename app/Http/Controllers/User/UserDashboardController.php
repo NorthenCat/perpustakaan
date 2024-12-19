@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\KoleksiBuku;
 use App\Models\CategoryBook;
 use App\Models\PeminjamBuku;
+use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
 
 class UserDashboardController extends Controller
@@ -95,5 +96,44 @@ class UserDashboardController extends Controller
         $pinjam->tanggal_kembali = Carbon::now('Asia/Jakarta')->format('Y-m-d H:i:s');
         $pinjam->save();
         return redirect()->back()->with('success', 'Terimakasih sudah mengembalikan buku ini.');
+    }
+
+    public function profile()
+    {   
+        return view('user.profile.index');
+    }
+
+    public function updateProfile(Request $request)
+    {   
+        $user = auth()->user();
+        $emailExists = $user->email == $request->email ? '' : '|unique:users,email';
+
+        $request->validate([
+            'name' => 'nullable|string|max:255',
+            'email' => 'nullable|email|unique:users,email,' . $user->id,
+            'avatar' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'password' => 'nullable|min:3'
+        ]);
+
+        if ($request->hasFile('profile_picture')) {
+            if ($user->profile_picture) {
+                Storage::disk('public')->delete('img/profile/' . $user->profile_picture);
+            }
+            $image = $request->file('profile_picture');
+            $imageName = time() . '.' . $image->extension();
+            $image->storeAs('public/img/profile', $imageName);
+            $user->profile_picture = $imageName;
+        }
+    
+        $user->name = $request->filled('name') ? $request->name : $user->name;
+        $user->email = $request->filled('email') ? $request->email : $user->email;
+    
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+        
+        $user->save();
+    
+        return redirect()->back()->with('success', 'Profile berhasil diubah');
     }
 }

@@ -23,6 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/kembalikan/{id}', [UserDashboardController::class, 'return'])->name('kembalikan-buku');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/profile', [UserDashboardController::class, 'profile'])->name('profile');
+    Route::put('/profile', [UserDashboardController::class, 'updateProfile'])->name('update-profile');
 });
 
 // Admin
