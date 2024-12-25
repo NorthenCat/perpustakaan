@@ -5,8 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>Dashboard</title>
-    @vite(['resources/css/app.css','resources/js/app.js'])
+    <title>Dashboard Admin</title>
+
+    {{-- Development --}}
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+
+    {{-- Production --}}
+    <link rel="stylesheet" href="{{asset('build/assets/app-5NZ0x0VH.css')}}">
+    <script type="module" src="{{asset('build/assets/app-5NZ0x0VH.js')}}" defer></script>
 
     {{-- FontAwosome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"

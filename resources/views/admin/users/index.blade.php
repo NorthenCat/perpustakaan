@@ -80,8 +80,8 @@
                     <td class="px-6 py-4 text-center">{{ $loop->iteration }}</td>
                     <td class="px-6 py-4 text-center">
                         @if($user->avatar)
-                        <img src="{{ asset('img/users/avatar/'.$user->avatar) }}" alt="Foto Profil"
-                            class="w-10 h-10 rounded-full">
+                        <img src="{{ asset('img/profile/'.$user->avatar) }}" alt="Foto Profil"
+                            class="w-10 h-10 rounded-full mx-auto">
                         @else
                         <div class="flex justify-center items-center mx-auto w-10 h-10 rounded-full bg-gray-300"><i
                                 class="fa-solid fa-user"></i></div>
