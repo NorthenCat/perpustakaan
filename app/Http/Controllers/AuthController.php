@@ -25,8 +25,7 @@ class AuthController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-        $credentials['is_deleted'] = false; //untuk ngecek apakah usernya masih ada atau sudah dihapus
-
+        $credentials['is_deleted'] = false;
         if (auth()->attempt($credentials)) {
             session()->regenerate();
             if (auth()->user()->is_admin) {

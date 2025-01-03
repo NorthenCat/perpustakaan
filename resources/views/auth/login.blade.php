@@ -15,7 +15,7 @@
         </div>
         @endif
 
-        @if(session('error'))
+        @if(session('error') || $errors->any())
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4 w-full sm:max-w-md"
             role="alert">
             <strong class="font-bold">Error!</strong>
