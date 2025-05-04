@@ -7,12 +7,12 @@
     <meta name="description" content="">
     <title>Dashboard Admin</title>
 
-    {{-- Development --}}
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
-    {{-- Production --}}
-    <link rel="stylesheet" href="{{asset('build/assets/app-5NZ0x0VH.css')}}">
-    <script type="module" src="{{asset('build/assets/app-DEdkgso6.js')}}" defer></script>
+    @if(app()->environment('local'))
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @else
+    <link rel="stylesheet" href="{{ asset('build/assets/app-5NZ0x0VH.css') }}">
+    <script type="module" src="{{ asset('build/assets/app-5NZ0x0VH.js') }}" defer></script>
+    @endif
 
     {{-- FontAwosome CDN --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"

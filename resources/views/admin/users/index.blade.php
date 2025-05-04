@@ -88,8 +88,9 @@
                         @endif
                     </td>
                     <td class="px-6 py-4 text-nowrap">{{ $user->name }} / {{$user->email}}</td>
-                    <td class="px-6 py-4 text-nowrap">{{ $user->phone_number }}</td>
-                    <td class="px-6 py-4 text-nowrap">{{ $user->date_of_birth->format('j F Y') }}</td>
+                    <td class="px-6 py-4 text-nowrap">{{ $user->phone_number ?? '-' }}</td>
+                    <td class="px-6 py-4 text-nowrap">{{ $user->date_of_birth ? $user->date_of_birth->format('j F Y') :
+                        '-' }}</td>
                     <td class="px-6 py-4 text-nowrap">{{ $user->is_admin ? 'Admin' : 'User' }}</td>
                     <td class="px-6 py-4 text-nowrap">
                         <div class="flex flex-wrap justify-center gap-4">
