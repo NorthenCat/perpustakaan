@@ -15,6 +15,8 @@ class AuthAPIController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'gender' => 'required|in:male,female',
+            'address' => 'required|string',
             'email' => 'required|string|email|max:255|unique:users',
             'phone_number' => 'required|numeric',
             'date_of_birth' => 'required|date',
@@ -23,6 +25,8 @@ class AuthAPIController extends Controller
 
         $user = User::create([
             'name' => $request->name,
+            'gender' => $request->gender,
+            'address' => $request->address,
             'email' => $request->email,
             'phone_number' => $request->phone_number,
             'date_of_birth' => $request->date_of_birth,

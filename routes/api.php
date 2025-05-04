@@ -22,23 +22,23 @@ use App\Http\Controllers\API\UserAPIController;
 Route::post('/register', [AuthAPIController::class, 'register']);
 Route::post('/login', [AuthAPIController::class, 'login']);
 
-// Books public routes
+// Books public routesphp artisan route:list --path=api
 Route::get('/books', [BukuAPIController::class, 'getAllBooks']);
 Route::get('/books/{id}', [BukuAPIController::class, 'getBookDetail']);
 Route::get('/categories', [BukuAPIController::class, 'getCategories']);
 
 // Protected routes
 Route::middleware('auth:sanctum')->group(function () {
-  // Auth
-  Route::post('/logout', [AuthAPIController::class, 'logout']);
+    // Auth
+    Route::post('/logout', [AuthAPIController::class, 'logout']);
 
-  // User profile
-  Route::get('/user/profile', [UserAPIController::class, 'profile']);
-  Route::put('/user/profile', [UserAPIController::class, 'updateProfile']);
-  Route::post('/user/avatar', [UserAPIController::class, 'updateAvatar']);
+    // User profile
+    Route::get('/user/profile', [UserAPIController::class, 'profile']);
+    Route::put('/user/profile', [UserAPIController::class, 'updateProfile']);
+    Route::post('/user/avatar', [UserAPIController::class, 'updateAvatar']);
 
-  // Borrowed books
-  Route::get('/peminjaman', [PeminjamanAPIController::class, 'getPeminjaman']);
-  Route::post('/peminjaman', [PeminjamanAPIController::class, 'pinjamBuku']);
-  Route::put('/peminjaman/{id}/return', [PeminjamanAPIController::class, 'kembalikanBuku']);
+    // Borrowed books
+    Route::get('/peminjaman', [PeminjamanAPIController::class, 'getPeminjaman']);
+    Route::post('/peminjaman', [PeminjamanAPIController::class, 'pinjamBuku']);
+    Route::put('/peminjaman/{id}/return', [PeminjamanAPIController::class, 'kembalikanBuku']);
 });
