@@ -59,6 +59,10 @@ class AuthAPIController extends Controller
         }
 
         $user = User::where('email', $request->email)->firstOrFail();
+
+        //create status field for user, so when created_at more than 10 year, set 'Tidak Aktif'
+        $user->status = $user->created_at->diffInYears(now()) > 10 ? 'Tidak Aktif' : 'Aktif';
+        $user->save();
         $token = $user->createToken('auth_token')->plainTextToken;
 
         return response()->json([
