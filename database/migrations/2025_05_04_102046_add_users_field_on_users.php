@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::table('users', function (Blueprint $table) {
             $table->enum('gender', ['male', 'female'])->after('name')->nullable();
-            $table->t('address')->after('phone_number')->nullable();
+            $table->text('address')->after('phone_number')->nullable();
         });
     }
 

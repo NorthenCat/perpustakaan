@@ -25,6 +25,8 @@ class CategorySeeder extends Seeder
             'Self-Help',
         ];
 
+        CategoryBook::truncate(); // Clear existing categories
+
         foreach ($categories as $category) {
             CategoryBook::create([
                 'nama_kategori' => $category,
