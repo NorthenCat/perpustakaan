@@ -59,6 +59,9 @@ class KoleksiBukuController extends Controller
         $coverName = time() . '.' . $cover->extension();
         $cover->move(public_path('img/books/cover'), $coverName);
 
+        // Store the full path instead of just the filename
+        $coverFullPath = 'img/books/cover/' . $coverName;
+
         KoleksiBuku::create([
             'judul' => $request->judul,
             'kode_buku' => $request->kode_buku,
@@ -66,7 +69,7 @@ class KoleksiBukuController extends Controller
             'pengarang' => $request->pengarang,
             'penerbit' => $request->penerbit,
             'tahun_terbit' => $request->tahun_terbit,
-            'cover' => $coverName,
+            'cover' => $coverFullPath,
             'deskripsi' => $request->deskripsi,
             'stok_buku' => $request->stok_buku,
         ]);
@@ -130,7 +133,8 @@ class KoleksiBukuController extends Controller
             $cover = $request->file('cover');
             $coverName = time() . '.' . $cover->extension();
             $cover->move(public_path('img/books/cover'), $coverName);
-            $book->cover = $coverName;
+            // Store the full path
+            $book->cover = 'img/books/cover/' . $coverName;
         }
 
         $book->update([

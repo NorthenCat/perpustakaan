@@ -14,7 +14,7 @@
         {{-- Cover --}}
         <div class="flex flex-col gap-4">
             <div class="w-48">
-                <img src="{{ asset('img/books/cover/'.$book->cover) }}" alt="{{ $book->judul }}" class="w-full h-auto">
+                <img src="{{ asset($book->cover) }}" alt="{{ $book->judul }}" class="w-full h-auto">
             </div>
             <div class="flex flex-col sm:flex-row gap-4">
                 <div class="flex flex-col gap-2">
