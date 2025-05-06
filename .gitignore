@@ -2,7 +2,7 @@
 /node_modules
 /public/build
 /public/hot
-/public/img
+/public/img/books
 /public/storage
 /storage/*.key
 /storage/pail
