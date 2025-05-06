@@ -128,7 +128,9 @@ class KoleksiBukuController extends Controller
         if ($request->hasFile('cover')) {
             // delete old cover
             if ($book->cover) {
-                unlink(public_path('img/books/cover/' . $book->cover));
+                if (file_exists(public_path($book->cover))) {
+                    unlink(public_path($book->cover));
+                }
             }
             $cover = $request->file('cover');
             $coverName = time() . '.' . $cover->extension();
@@ -159,7 +161,9 @@ class KoleksiBukuController extends Controller
         $book = KoleksiBuku::findOrFail($id);
 
         if ($book->cover) {
-            unlink(public_path('img/books/cover/' . $book->cover));
+            if (file_exists(public_path($book->cover))) {
+                unlink(public_path($book->cover));
+            }
         }
 
         $book->delete();
