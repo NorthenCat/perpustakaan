@@ -3,8 +3,9 @@
 @section('content')
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-        <p class="italic flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-            Perpustakaan
+        <img src="{{ asset('img/Easylib_logo.png') }}" alt="Logo" class="h-28" alt="Logo" />
+        <p class="italic flex items-center mb-6 text-xl font-semibold text-gray-900 dark:text-white">
+            Mudah, Cepat, Akses Dimana Saja
         </p>
         {{-- Alert Message --}}
         @if(session('success'))

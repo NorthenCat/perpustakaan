@@ -33,7 +33,7 @@
     </div>
     <div class="w-full max-w-5xl grid grid-cols-1 sm:grid-cols-[1fr,2fr] gap-4 bg-white rounded-lg p-6 mx-auto">
         <div class="w-full">
-            <img src="{{ asset('img/books/cover/' . $book->cover) }}" alt=""
+            <img src="{{ asset($book->cover) }}" alt=""
                 class="w-full object-cover object-center rounded-lg">
         </div>
         <div class="flex flex-col space-y-3 break-all">

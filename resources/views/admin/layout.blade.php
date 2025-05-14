@@ -28,7 +28,11 @@
         {{-- Header --}}
         <header class="bg-white shadow">
             <div class="flex justify-between items-center px-4 py-6">
-                <h1 class="text-2xl font-bold">Admin Dashboard Perpustakaan</h1>
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    {{-- Logo --}}
+                    <img src="{{ asset('img/Easylib_logo_2.png') }}" alt="" class="h-16" alt="Logo" />
+                    <h1 class="text-2xl font-bold">EasyLib Dashboard</h1>
+                </div>
                 <div class="flex flex-row space-x-2 items-center">
                     <a href="{{route('logout')}}"
                         class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"><i

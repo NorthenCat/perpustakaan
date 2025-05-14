@@ -64,7 +64,7 @@
                 class="w-80 h-[400px] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex flex-col">
                 <a href="/detail/{{ $book->id }}">
                     <img class="rounded-t-lg max-h-60 w-full object-cover object-center"
-                        src="{{ asset('img/books/cover/' . $book->cover) }}" alt="{{ $book->judul }}" />
+                        src="{{ asset($book->cover) }}" alt="{{ $book->judul }}" />
                 </a>
                 <div class="p-5 flex flex-col flex-grow">
                     <a href="#">

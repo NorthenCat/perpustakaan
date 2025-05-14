@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>PerpustakaanQU</title>
+    <title>EasyLib</title>
 
     @if(app()->environment('local'))
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -31,10 +31,8 @@
             <div class="max-w-screen-full flex flex-wrap items-center justify-between mx-auto py-4 px-10">
                 <!-- Kiri -->
                 <a href="{{ route('home') }}" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://w7.pngwing.com/pngs/606/201/png-transparent-mississauga-library-system-school-library-public-library-online-public-access-catalog-library-miscellaneous-trademark-logo.png"
-                        class="h-8" alt="Logo" />
-                    <span
-                        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Perpustakaan</span>
+                    <img src="{{ asset('img/Easylib_logo.png') }}" alt="Logo"
+                        class="h-12" alt="Logo" />
                 </a>
 
                 <!-- Kanan -->

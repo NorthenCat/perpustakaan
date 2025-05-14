@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>PerpustakaanQU - Authentication</title>
+    <title>EasyLib - Authentication</title>
 
     @if(app()->environment('local'))
     @vite(['resources/css/app.css', 'resources/js/app.js'])

@@ -45,6 +45,8 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users,email',
             'phone_number' => 'required|numeric',
             'date_of_birth' => 'required|date',
+            'gender' => 'required|in:male,female',
+            'address' => 'required|string|max:255',
             'password' => 'required|min:3',
             'password_confirmation' => 'required|same:password'
         ]);
@@ -54,6 +56,8 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->phone_number = $request->phone_number;
         $user->date_of_birth = $request->date_of_birth;
+        $user->gender = $request->gender;
+        $user->address = $request->address;
         $user->password = bcrypt($request->password);
         $user->save();
 

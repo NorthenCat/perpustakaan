@@ -3,9 +3,7 @@
 @section('content')
 <section class="bg-gray-50 dark:bg-gray-900">
     <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto h-screen lg:py-0">
-        <p class="italic flex items-center mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
-            Perpustakaan
-        </p>
+<img src="{{ asset('img/Easylib_logo.png') }}" alt="Logo" class="h-16 mb-5" alt="Logo" />
         <div
             class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
@@ -36,6 +34,17 @@
                             @enderror
                         </div>
                     </div>
+                        <div>
+                            <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jenis Kelamin</label>
+                            <select name="gender" id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="">
+                                <option value="">Pilih Jenis Kelamin</option>
+                                <option value="male">Laki-laki</option>
+                                <option value="female">Perempuan</option>
+                            </select>
+                            @error('gender')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                        </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
                             <label for="phone_number"
@@ -61,6 +70,13 @@
                         </div>
                     </div>
                     <div>
+                        <label for="address" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Alamat</label>
+                            <textarea name="address" id="address" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Masukkan alamat lengkap" required=""></textarea>
+                            @error('address')
+                            <span class="text-red-500 text-sm">{{ $message }}</span>
+                            @enderror
+                    </div>
+                    <div>
                         <label for="password"
                             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                         <input type="password" name="password" id="password" placeholder="••••••••"
@@ -68,7 +84,6 @@
                             required=""> @error('password')
                         <span class="text-red-500 text-sm">{{ $message }}</span>
                         @enderror
-
                     </div>
                     <div>
                         <label for="password_confirmation"
